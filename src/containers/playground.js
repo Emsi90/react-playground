@@ -10,7 +10,6 @@ class Playground extends Component {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve(console.log('Async 1 wykonuje sie po 6s'));
-        // return time;
       }, 2000);
     });
   }
@@ -25,10 +24,8 @@ class Playground extends Component {
 
   loadHandler = async () => {
     try{
-      console.log('hq1')
-      const await2 = await this.funAwait2Handler();
-      const await1 = await this.funAwait1Handler();
-      console.log(await2, await1)
+      await this.funAwait2Handler();
+      this.funAwait1Handler();
     } catch(error) {
       console.log(error)
     }
@@ -48,14 +45,6 @@ class Playground extends Component {
     }
     timeInt();
   }
-
-  // loaderPromiseHandler = () => {
-  //   return new Promise((resolve, reject) => {
-  //     this.funAwait2Handler(resolve, reject);
-  //   });
-  // }
-
-
 
   render() {
     return (
